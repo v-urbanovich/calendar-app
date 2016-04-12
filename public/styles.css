@@ -1,0 +1,131 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}html, body {
+    width: 100%;
+    position: relative;
+}
+
+.group:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}calendar header {
+    width: 100%;
+    border-bottom: solid 2px gray;
+}
+
+calendar header .month {
+    margin: 0.1em 0.8em;
+    font-size: 2.3em;
+    color: #49444e;
+}
+
+calendar header .year {
+    font-size: 1.8em;
+    color: #8b8493;
+}
+
+calendar header .day-name {
+    display: inline-block;
+    margin: 0.3em auto 0.1em;
+    padding-right: 0.1em;
+    width: 14.28%;
+    font-size: 1.3em;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+calendar section .day {
+    position: relative;
+    display: inline-block;
+    width: 14.28%;
+    height: 7em;
+    border: solid 1px rgb(190,190,190);
+    border-right: none;
+    border-top: none;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+calendar section .day.not-this-month {
+    color: rgb(190,190,190);
+}
+
+calendar section .day.weekend {
+    background-color: rgb(230, 230, 230);
+}
+
+calendar section .day:hover {
+    cursor: pointer;
+    background-color: rgb(245, 245, 245);
+}
+
+calendar section .day .date {
+    width: 98%;
+    margin-top: 0.3em;
+    margin-right: 2%;
+    text-align: right;
+}
+
+calendar section .day .date .today {
+    background-color: rgb(255, 60, 60);
+    padding: 0.2em;
+    border-radius: 50%;
+}
+
+calendar section .day .events {
+    width: 90%;
+    margin: 0.3em auto;
+    padding: 0.2em;
+    background-color: rgb(255, 140, 140);
+    border-radius: 7px;
+    font-weight: bold;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3R5bGVzLmNzcyIsInNvdXJjZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OyIsInNvdXJjZVJvb3QiOiIifQ==*/

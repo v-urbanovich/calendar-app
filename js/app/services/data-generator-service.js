@@ -5,7 +5,7 @@ module.exports = function() {
         let dataArray = [],
             dateNow = new Date();
 
-        //добавить числа предыдущего месяца
+        //РґРѕР±Р°РІРёС‚СЊ С‡РёСЃР»Р° РїСЂРµРґС‹РґСѓС‰РµРіРѕ РјРµСЃСЏС†Р°
         let firstDay = new Date(dateNow.getFullYear(), dateNow.getMonth(), 1),
             previousMonthLastDay = new Date(firstDay - 1).getDate(),
             numberOfPastDays = (firstDay.getDay() || 7) - 1;
@@ -23,7 +23,7 @@ module.exports = function() {
             dataArray.unshift(dayData);
         }
 
-        //добавить числа месяца
+        //РґРѕР±Р°РІРёС‚СЊ С‡РёСЃР»Р° РјРµСЃСЏС†Р°
         let numberOfDays = new Date(dateNow.getFullYear(), dateNow.getMonth() + 1, 0).getDate();
 
         for (let i = 0; i < numberOfDays; i += 1) {
@@ -40,7 +40,7 @@ module.exports = function() {
             dataArray.push(dayData);
         }
 
-        //добавить дни следующего месяца
+        //РґРѕР±Р°РІРёС‚СЊ РґРЅРё СЃР»РµРґСѓСЋС‰РµРіРѕ РјРµСЃСЏС†Р°
         let numberOfFutureDays = 7 - dataArray.length % 7;
 
         for (let i = 0; i < numberOfFutureDays; i += 1) {

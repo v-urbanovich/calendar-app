@@ -3,7 +3,11 @@
 const mainViewTemplate = require('./template/main-view-template.html');
 
 const mainView = {
-    controller: function() {
+    controller: function(dataGenerator) {
+        this.data = {
+            daysData: dataGenerator()
+        };
+
 
     },
     template: mainViewTemplate
