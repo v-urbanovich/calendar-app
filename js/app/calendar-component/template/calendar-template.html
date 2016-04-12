@@ -11,6 +11,7 @@
 <section>
     <div class="day"
          ng-class="{'not-this-month': day.month !== $ctrl.date.getMonth(), 'weekend': day.day > 5}"
+         ng-click="$ctrl.select({index: $index})"
          ng-repeat="day in $ctrl.data">
         <div class="date">
             <span ng-class="{'today': day.today}">{{day.date}}</span>

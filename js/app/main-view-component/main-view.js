@@ -8,6 +8,13 @@ const mainView = {
             daysData: dataGenerator()
         };
 
+        this.selectDay = function(index) {
+            this.data.selectedDay = this.data.daysData[index]
+        };
+
+        this.unselectDay = function() {
+            delete this.data.selectedDay;
+        };
 
     },
     template: mainViewTemplate

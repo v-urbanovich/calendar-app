@@ -4,7 +4,8 @@ const calendarTemplate = require('./template/calendar-template.html');
 
 const calendar = {
     bindings: {
-        data: '<'
+        data: '<',
+        select: '&'
     },
     controller: function() {
         this.date = new Date;
