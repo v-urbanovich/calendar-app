@@ -24,10 +24,19 @@ const selectedDay = {
                 modal.open({title: 'Ошибка', message: 'Нельзя добавить события на прошедшие дни'}, 'alert');
                 return;
             }
-
+            if (edit) {
+                if (edit.time.events[edit.index].custom) {
+                    return;
+                }
+                formDataService.setData(edit.time.events[edit.index])
+            }
             modal.open({title: 'Введите данные', message: ''}, 'add-event')
                 .then((data) => {
-
+                    if(edit) {
+                        this.remove({event: edit.time.events[edit.index], day: edit.day});
+                        let timeIndex = this.times.indexOf(edit.time);
+                        this.times[timeIndex].events.splice(edit.index, 1);
+                    }
                     let eventData = JSON.parse(data.data),
                         obj = {
                         time: ('0' + eventData.hours).slice(-2) + ':' + ('0' + eventData.minutes).slice(-2),
@@ -59,7 +68,9 @@ const selectedDay = {
                 });
         };
 
-
+        this.editEvent = function(data) {
+            this.addEvent(data);
+        }
     },
     template: selectedDayTemplate
 };

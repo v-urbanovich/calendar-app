@@ -17,7 +17,7 @@
         <div class="hour">{{ time.hours }}</div>
         <div class="events" ng-class="{'activeTime': time.events.length}">
             <div ng-repeat="event in time.events" class="event">
-                <div class="event-data">
+                <div ng-click="$ctrl.editEvent({index: $index, time: time, day: $ctrl.data})" class="event-data">
                     <div class="event-time">{{ event.time }}</div>
                     <div class="event-title">{{ event.title }}</div>
                     <div class="event-content">{{ event.content }}</div>
