@@ -3,9 +3,9 @@
 module.exports = function ($q) {
     let state = 'close',
         type = null,
+        modalViewData = {},
         defer;
 
-    let modalViewData = {};
 
     function getState() {
         return state;
@@ -19,6 +19,7 @@ module.exports = function ($q) {
         modalViewData.data = data;
         type = modal_type;
         state = 'open';
+
         if (modal_type === 'confirm' || modal_type === 'add-event') {
             defer = $q.defer();
             return defer.promise;
@@ -32,6 +33,7 @@ module.exports = function ($q) {
         } else if (type === 'confirm' && type === 'add-event') {
             defer.reject();
         }
+
         state = 'close';
         type = null;
         delete modalViewData.data;

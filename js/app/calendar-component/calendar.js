@@ -10,7 +10,7 @@ const calendar = {
     },
     controller: function() {
         this.date = new Date;
-        this.dayNames = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс']
+        this.dayNames = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
 
         this.getEventText = function(day) {
             let numberOfEvents = day.events.length;

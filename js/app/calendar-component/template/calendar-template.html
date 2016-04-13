@@ -1,4 +1,5 @@
 <div class="calendar" ng-if="!$ctrl.selected">
+
     <header>
         <div class="title">
             <span class="month">{{ $ctrl.date.getMonth() | monthFilter }}</span>
@@ -9,20 +10,21 @@
         </div>
     </header>
 
+
     <section>
         <div class="day"
              ng-class="{'not-this-month': day.month !== $ctrl.date.getMonth(), 'weekend': day.day > 5}"
              ng-click="$ctrl.select({index: $index})"
              ng-repeat="day in $ctrl.data">
+
             <div class="date">
                 <span ng-class="{'today': day.today}">{{day.date}}</span>
             </div>
-            <div class="weekday">
-                {{ day.day | dayFilter}}
-            </div>
-            <div class="events" ng-if="day.events.length">
-                {{ $ctrl.getEventText(day) }}
-            </div>
+
+            <div class="weekday">{{ day.day | dayFilter}}</div>
+
+            <div class="events" ng-if="day.events.length">{{ $ctrl.getEventText(day) }}</div>
+
         </div>
     </section>
 </div>

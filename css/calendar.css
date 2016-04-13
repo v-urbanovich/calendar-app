@@ -99,6 +99,7 @@ calendar section .day .events {
     background-color: rgb(255, 140, 140);
     border-radius: 7px;
     font-weight: bold;
+    color: black;
 }
 
 @media (min-width: 700px) {

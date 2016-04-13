@@ -1,7 +1,13 @@
 <div class="modal-background" ng-if="$ctrl.checkOpen()">
     <div class="window an" ng-if="$ctrl.checkOpen()">
+
+        <!-- заголовок -->
         <div class="title">{{ $ctrl.modalViewData.data.title }}</div>
+
+        <!-- сообщение -->
         <div class="message" ng-if="!$ctrl.checkType('add-event')">{{ $ctrl.modalViewData.data.message }}</div>
+
+        <!-- Форма добавления событий -->
         <div class="add-form" ng-if="$ctrl.checkType('add-event')">
             <table>
                 <tr class="add-form-time">
@@ -23,6 +29,7 @@
             </table>
         </div>
 
+        <!-- Кнопки для различных видов окна -->
         <div class="buttons group">
 
             <div class="confirm" ng-if="$ctrl.checkType('confirm')">
@@ -37,6 +44,8 @@
                 <div class="ok" ng-click="$ctrl.close(true, $ctrl.data)">Сохранить</div>
             </div>
         </div>
+
+        <!-- Закрыть -->
         <div class="close" ng-click="$ctrl.close()">x</div>
     </div>
 </div>

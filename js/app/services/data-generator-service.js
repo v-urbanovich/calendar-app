@@ -17,9 +17,17 @@ module.exports = function() {
                 year: new Date(firstDay - 1).getFullYear(),
                 today: false,
                 month: new Date(firstDay - 1).getMonth(),
-                events: [],
-                customEvents: []
+                events: []
             };
+
+            if (i === 2) {
+                dayData.events.push({
+                    time: '00:00',
+                    title: 'День защиты прав',
+                    content: '',
+                    custom: true
+                });
+            }
 
             dataArray.unshift(dayData);
         }
@@ -71,6 +79,15 @@ module.exports = function() {
                     events: [],
                     customEvents: []
                 };
+
+            if (i === 0) {
+                dayData.events.push({
+                    time: '00:00',
+                    title: 'День космонавтики',
+                    content: '',
+                    custom: true
+                });
+            }
 
             dataArray.push(dayData);
         }

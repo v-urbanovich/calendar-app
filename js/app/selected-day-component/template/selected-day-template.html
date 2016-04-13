@@ -1,4 +1,5 @@
 <header class="group selected-day">
+
     <div class="title">
         <span class="month">{{ $ctrl.data.month | monthFilter }} {{ $ctrl.data.date }},</span>
         <span class="year">{{ $ctrl.data.year }}</span>
@@ -16,6 +17,7 @@
     <div class="times group" ng-repeat="time in $ctrl.times">
         <div class="hour">{{ time.hours }}</div>
         <div class="events" ng-class="{'activeTime': time.events.length}">
+
             <div ng-repeat="event in time.events" class="event">
                 <div ng-click="$ctrl.editEvent({index: $index, time: time, day: $ctrl.data})" class="event-data">
                     <div class="event-time">{{ event.time }}</div>
@@ -24,6 +26,7 @@
                 </div>
                 <div class="event-remove" ng-click="$ctrl.removeEvent($index, time, $ctrl.data)">X</div>
             </div>
+
         </div>
     </div>
 </section>
