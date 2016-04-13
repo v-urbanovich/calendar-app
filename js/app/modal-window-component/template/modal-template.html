@@ -1,0 +1,46 @@
+<div class="modal-background" ng-if="$ctrl.checkOpen()">
+    <div class="window an" ng-if="$ctrl.checkOpen()">
+        <div class="title">{{ $ctrl.modalViewData.data.title }}</div>
+
+        <div class="message" ng-if="!$ctrl.checkType('add-event')">{{ $ctrl.modalViewData.data.message }}</div>
+
+        <div class="add-form" ng-if="$ctrl.checkType('add-event')">
+            <table>
+                <tr class="add-form-time">
+                    <td>Время:</td>
+                    <td><input type="text" ng-model="$ctrl.data.hours">:<input type="text"
+                                                                               ng-model="$ctrl.data.minutes"></td>
+                    <td ng-if="$ctrl.validationObj.time.status" class="warning">{{ $ctrl.validationObj.time.message }}</td>
+                </tr>
+                <tr class="add-form-title">
+                    <td>Заголовок:</td>
+                    <td><input type="text" ng-model="$ctrl.data.title"></td>
+                    <td ng-if="$ctrl.validationObj.title.status" class="warning">{{ $ctrl.validationObj.title.message }}</td>
+                </tr>
+                <tr class="add-form-content">
+                    <td>Описание:</td>
+                    <td><input type="text" ng-model="$ctrl.data.content"></td>
+                    <td ng-if="$ctrl.validationObj.content.status" class="warning">{{ $ctrl.validationObj.content.message }}</td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div class="buttons group">
+
+            <div class="confirm" ng-if="$ctrl.checkType('confirm')">
+                <div class="reject" ng-click="$ctrl.close()">Отмена</div>
+                <div class="ok" ng-click="$ctrl.close(true)">OK</div>
+            </div>
+
+            <div class="alert" ng-if="$ctrl.checkType('alert')" ng-click="$ctrl.close()">Закрыть</div>
+
+            <div class="add-event" ng-if="$ctrl.checkType('add-event')">
+                <div class="reject" ng-click="$ctrl.close()">Отмена</div>
+                <div class="ok" ng-click="$ctrl.close(true, $ctrl.data)">Сохранить</div>
+            </div>
+        </div>
+
+        <div class="close" ng-click="$ctrl.close()">x</div>
+    </div>
+</div>
