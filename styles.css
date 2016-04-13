@@ -167,7 +167,7 @@ calendar section .day .events {
     color: black;
 }
 
-@media (min-width: 700px) {
+@media screen and (min-width: 700px) {
     calendar section .day {
         width: 14.28%;
         height: 7em;
@@ -230,7 +230,7 @@ selected-day header .menu {
     clear: both;
 }
 
-@media (min-width: 640px) {
+@media screen and (min-width: 640px) {
     selected-day header .menu {
         float: right;
         margin: 1em 2em;
@@ -332,7 +332,7 @@ section .times .events .event .event-remove:hover {
     font-weight: bold;
 }
 
-@media (min-width: 640px) {
+@media screen and (min-width: 640px) {
     selected-day section {
         width: 100%;
         margin: 6em auto 1em;
@@ -351,7 +351,7 @@ section .times .events .event .event-remove:hover {
         max-width: 25%;
         min-width: 10%;
     }
-}@media (max-width: 730px) {
+}@media screen and (max-width: 730px) {
     modal-window .modal-background div.window {
         width: 80%;
         left: 30%;
