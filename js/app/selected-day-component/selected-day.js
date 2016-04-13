@@ -26,6 +26,7 @@ const selectedDay = {
             }
             if (edit) {
                 if (edit.time.events[edit.index].custom) {
+                    modal.open({title: 'Ошибка', message: 'Нельзя редактировать основные события'}, 'alert');
                     return;
                 }
                 formDataService.setData(edit.time.events[edit.index])

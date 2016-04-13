@@ -39,17 +39,11 @@ module.exports = function() {
                 };
             if (i === 15) {
                 dayData.events.push({
-                    time: '10:20',
-                    title: 'My new event',
-                    content: 'Hello? ddsdasdkl;k;las asdk;w dsdasdkl;k;las  dsdasdkl;k;las  dsdasdkl;k;las ',
-                    custom: false
+                    time: '00:00',
+                    title: 'Новый год',
+                    content: '',
+                    custom: true
                 });
-                dayData.events.push({
-                    time: '10:20',
-                    title: 'My new event',
-                    content: 'Hello? ddsdasdkl;k;las asdk;w dsdasdkl;k;las  dsdasdkl;k;las  dsdasdkl;k;las ',
-                    custom: false
-                })
             }
 
             dataArray.push(dayData);
