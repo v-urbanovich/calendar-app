@@ -147,3 +147,8 @@ modal-window .modal-background .window .add-form .warning {
 modal-window .modal-background .window .add-form .add-form-time input {
     width: 1.2em;
 }
+
+modal-window .modal-background .window .add-form .add-form-title input,
+modal-window .modal-background .window .add-form .add-form-content input {
+    width: 100%;
+}

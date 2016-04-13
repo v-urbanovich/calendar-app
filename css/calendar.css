@@ -21,6 +21,7 @@ calendar .calendar.ng-enter.ng-enter-active {
 
 calendar header {
     width: 100%;
+    padding: 1em;
     border-bottom: solid 2px gray;
 }
 
@@ -36,7 +37,7 @@ calendar header .year {
 }
 
 calendar header .day-name {
-    display: inline-block;
+    display: none;
     margin: 0.3em auto 0.1em;
     padding-right: 0.1em;
     width: 14.28%;
@@ -48,7 +49,7 @@ calendar header .day-name {
 calendar section .day {
     position: relative;
     display: inline-block;
-    width: 14.28%;
+    width: 99%;
     height: 7em;
     border: solid 1px rgb(190,190,190);
     border-right: none;
@@ -56,12 +57,20 @@ calendar section .day {
     vertical-align: top;
     box-sizing: border-box;
 }
+calendar section .weekday {
+    position: absolute;
+    display: inherit;
+    top: 0.2em;
+    left: 0.2em;
+}
 
 calendar section .day.not-this-month {
+    display: none;
     color: rgb(190,190,190);
 }
 
 calendar section .day.weekend {
+    width: 50%;
     background-color: rgb(230, 230, 230);
 }
 
@@ -90,4 +99,32 @@ calendar section .day .events {
     background-color: rgb(255, 140, 140);
     border-radius: 7px;
     font-weight: bold;
+}
+
+@media (min-width: 700px) {
+    calendar section .day {
+        width: 14.28%;
+        height: 7em;
+    }
+
+    calendar section .day.weekend {
+        width: 14.28%;
+        height: 7em;
+    }
+
+    calendar header .day-name {
+        display: inline-block;
+    }
+
+    calendar section .day.not-this-month {
+        display: inline-block;
+    }
+
+    calendar header {
+        padding: 0;
+    }
+
+    calendar section .weekday {
+        display: none;
+    }
 }

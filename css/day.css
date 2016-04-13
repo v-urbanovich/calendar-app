@@ -1,5 +1,3 @@
-
-
 selected-day header.selected-day {
     position: fixed;
     width: 100%;
@@ -32,9 +30,24 @@ selected-day header .day {
 }
 
 selected-day header .menu {
-    float: right;
-    margin: 1em 2em;
+    float: left;
+    margin: 1em;
+    clear: both;
 }
+
+@media (min-width: 640px) {
+    selected-day header .menu {
+        float: right;
+        margin: 1em 2em;
+        clear: none;
+    }
+
+    header.selected-day .title {
+        clear: both;
+    }
+}
+
+
 
 selected-day header .menu .back,
 selected-day header .menu .add-event {
@@ -45,6 +58,10 @@ selected-day header .menu .add-event {
     transition: 0.2s;
 }
 
+selected-day header .menu .add-event {
+    margin-top: 0.2em;
+}
+
 selected-day header .menu div:hover {
     background-color: black;
     color: white;
@@ -52,7 +69,7 @@ selected-day header .menu div:hover {
 
 selected-day section {
     width: 100%;
-    margin: 6em auto 1em;
+    margin: 12em auto 1em;
 }
 
 selected-day section .times {
@@ -74,17 +91,18 @@ selected-day section .times .events {
 
 selected-day section .times .hour {
     float: left;
-    width: 7%;
+    width: 15%;
     text-align: right;
 }
 
 selected-day section .times .events {
     float: right;
-    width: 92%;
+    width: 84%;
     border-left: solid 1px #8b8493;
     background-color: rgb(247, 247, 247);
     box-sizing: border-box;
 }
+
 
 selected-day section .times .events.activeTime {
     background-color: #fdfab6;
@@ -94,8 +112,7 @@ section .times .events .event {
     position: relative;
     display: inline-block;
     margin: 0 0 1em 1em ;
-    max-width: 25%;
-    min-width: 10%;
+    width: 40%;
     vertical-align: top;
 }
 
@@ -118,4 +135,25 @@ section .times .events .event .event-remove {
 
 section .times .events .event .event-remove:hover {
     font-weight: bold;
+}
+
+@media (min-width: 640px) {
+    selected-day section {
+        width: 100%;
+        margin: 6em auto 1em;
+    }
+
+    selected-day section .times .hour {
+        width: 7%;
+    }
+
+    selected-day section .times .events {
+        width: 92%;
+    }
+
+    section .times .events .event {
+        width: auto;
+        max-width: 25%;
+        min-width: 10%;
+    }
 }

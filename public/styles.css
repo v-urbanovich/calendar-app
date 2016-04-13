@@ -86,6 +86,7 @@ calendar .calendar.ng-enter.ng-enter-active {
 
 calendar header {
     width: 100%;
+    padding: 1em;
     border-bottom: solid 2px gray;
 }
 
@@ -101,7 +102,7 @@ calendar header .year {
 }
 
 calendar header .day-name {
-    display: inline-block;
+    display: none;
     margin: 0.3em auto 0.1em;
     padding-right: 0.1em;
     width: 14.28%;
@@ -113,7 +114,7 @@ calendar header .day-name {
 calendar section .day {
     position: relative;
     display: inline-block;
-    width: 14.28%;
+    width: 99%;
     height: 7em;
     border: solid 1px rgb(190,190,190);
     border-right: none;
@@ -121,12 +122,20 @@ calendar section .day {
     vertical-align: top;
     box-sizing: border-box;
 }
+calendar section .weekday {
+    position: absolute;
+    display: inherit;
+    top: 0.2em;
+    left: 0.2em;
+}
 
 calendar section .day.not-this-month {
+    display: none;
     color: rgb(190,190,190);
 }
 
 calendar section .day.weekend {
+    width: 50%;
     background-color: rgb(230, 230, 230);
 }
 
@@ -157,7 +166,33 @@ calendar section .day .events {
     font-weight: bold;
 }
 
-selected-day header.selected-day {
+@media (min-width: 700px) {
+    calendar section .day {
+        width: 14.28%;
+        height: 7em;
+    }
+
+    calendar section .day.weekend {
+        width: 14.28%;
+        height: 7em;
+    }
+
+    calendar header .day-name {
+        display: inline-block;
+    }
+
+    calendar section .day.not-this-month {
+        display: inline-block;
+    }
+
+    calendar header {
+        padding: 0;
+    }
+
+    calendar section .weekday {
+        display: none;
+    }
+}selected-day header.selected-day {
     position: fixed;
     width: 100%;
     top: 0;
@@ -189,9 +224,24 @@ selected-day header .day {
 }
 
 selected-day header .menu {
-    float: right;
-    margin: 1em 2em;
+    float: left;
+    margin: 1em;
+    clear: both;
 }
+
+@media (min-width: 640px) {
+    selected-day header .menu {
+        float: right;
+        margin: 1em 2em;
+        clear: none;
+    }
+
+    header.selected-day .title {
+        clear: both;
+    }
+}
+
+
 
 selected-day header .menu .back,
 selected-day header .menu .add-event {
@@ -202,6 +252,10 @@ selected-day header .menu .add-event {
     transition: 0.2s;
 }
 
+selected-day header .menu .add-event {
+    margin-top: 0.2em;
+}
+
 selected-day header .menu div:hover {
     background-color: black;
     color: white;
@@ -209,7 +263,7 @@ selected-day header .menu div:hover {
 
 selected-day section {
     width: 100%;
-    margin: 6em auto 1em;
+    margin: 12em auto 1em;
 }
 
 selected-day section .times {
@@ -231,17 +285,18 @@ selected-day section .times .events {
 
 selected-day section .times .hour {
     float: left;
-    width: 7%;
+    width: 15%;
     text-align: right;
 }
 
 selected-day section .times .events {
     float: right;
-    width: 92%;
+    width: 84%;
     border-left: solid 1px #8b8493;
     background-color: rgb(247, 247, 247);
     box-sizing: border-box;
 }
+
 
 selected-day section .times .events.activeTime {
     background-color: #fdfab6;
@@ -251,8 +306,7 @@ section .times .events .event {
     position: relative;
     display: inline-block;
     margin: 0 0 1em 1em ;
-    max-width: 25%;
-    min-width: 10%;
+    width: 40%;
     vertical-align: top;
 }
 
@@ -275,6 +329,27 @@ section .times .events .event .event-remove {
 
 section .times .events .event .event-remove:hover {
     font-weight: bold;
+}
+
+@media (min-width: 640px) {
+    selected-day section {
+        width: 100%;
+        margin: 6em auto 1em;
+    }
+
+    selected-day section .times .hour {
+        width: 7%;
+    }
+
+    selected-day section .times .events {
+        width: 92%;
+    }
+
+    section .times .events .event {
+        width: auto;
+        max-width: 25%;
+        min-width: 10%;
+    }
 }@media (max-width: 730px) {
     modal-window .modal-background div.window {
         width: 80%;
@@ -424,4 +499,10 @@ modal-window .modal-background .window .add-form .warning {
 modal-window .modal-background .window .add-form .add-form-time input {
     width: 1.2em;
 }
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3R5bGVzLmNzcyIsInNvdXJjZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Iiwic291cmNlUm9vdCI6IiJ9*/
+
+modal-window .modal-background .window .add-form .add-form-title input,
+modal-window .modal-background .window .add-form .add-form-content input {
+    width: 100%;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3R5bGVzLmNzcyIsInNvdXJjZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Iiwic291cmNlUm9vdCI6IiJ9*/

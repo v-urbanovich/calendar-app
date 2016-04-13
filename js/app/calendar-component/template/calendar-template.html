@@ -17,6 +17,9 @@
             <div class="date">
                 <span ng-class="{'today': day.today}">{{day.date}}</span>
             </div>
+            <div class="weekday">
+                {{ day.day | dayFilter}}
+            </div>
             <div class="events" ng-if="day.events.length">
                 {{ $ctrl.getEventText(day) }}
             </div>
