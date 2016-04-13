@@ -21,7 +21,8 @@ const selectedDay = {
 
         this.addEvent = function(edit) {
             if (this.data.year < new Date().getFullYear() || this.data.month < new Date().getMonth() || this.data.date < new Date().getDate()) {
-                modal.open({title: 'Ошибка', message: 'Нельзя добавить события на прошедшие дни'}, 'alert');
+                if (edit) modal.open({title: 'Ошибка', message: 'Нельзя редактировать прошедшие события'}, 'alert');
+                else modal.open({title: 'Ошибка', message: 'Нельзя добавить события на прошедшие дни'}, 'alert');
                 return;
             }
             if (edit) {

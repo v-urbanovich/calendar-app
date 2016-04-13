@@ -45,6 +45,14 @@ module.exports = function() {
                     custom: true
                 });
             }
+            if (i === 5) {
+                dayData.events.push({
+                    time: '07:25',
+                    title: 'Моё обычное событие',
+                    content: 'Тест Тест Тест Тест Тест ТестТест Тест ',
+                    custom: false
+                });
+            }
 
             dataArray.push(dayData);
         }
