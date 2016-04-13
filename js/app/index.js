@@ -1,6 +1,6 @@
 'use strict';
 
-const calendar = angular.module('calendar', []);
+const calendar = angular.module('calendar', ['ngAnimate']);
 
 calendar
     .factory('dataGenerator', require('./services/data-generator-service'))
