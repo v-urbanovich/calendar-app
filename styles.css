@@ -1,0 +1,507 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}@font-face {
+    font-family: "Hangyaboly";
+    src: url(css/fonts/hangyaboly.ttf)   format("truetype");
+}
+
+html, body {
+    width: 100%;
+    position: relative;
+    font-family: Hangyaboly, sans-serif;
+    font-size: 1em;
+}
+
+.group:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}.selected.ng-enter {
+    opacity: 0;
+    transition: 1.7s;
+}
+
+.selected.ng-enter.ng-enter-active {
+    opacity: 1;
+    transition: 1.7s;
+}
+
+calendar .calendar.ng-enter {
+    opacity: 0;
+    transition: 1.7s;
+}
+
+
+calendar .calendar.ng-enter.ng-enter-active {
+    opacity: 1;
+    transition: 1.7s;
+}
+
+calendar header {
+    width: 100%;
+    padding: 1em;
+    border-bottom: solid 2px gray;
+}
+
+calendar header .month {
+    margin: 0.1em 0.8em;
+    font-size: 2.3em;
+    color: #49444e;
+}
+
+calendar header .year {
+    font-size: 1.8em;
+    color: #8b8493;
+}
+
+calendar header .day-name {
+    display: none;
+    margin: 0.3em auto 0.1em;
+    padding-right: 0.1em;
+    width: 14.28%;
+    font-size: 1.3em;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+calendar section .day {
+    position: relative;
+    display: inline-block;
+    width: 99%;
+    height: 7em;
+    border: solid 1px rgb(190,190,190);
+    border-right: none;
+    border-top: none;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+calendar section .weekday {
+    position: absolute;
+    display: inherit;
+    top: 0.2em;
+    left: 0.2em;
+}
+
+calendar section .day.not-this-month {
+    display: none;
+    color: rgb(190,190,190);
+}
+
+calendar section .day.weekend {
+    width: 50%;
+    background-color: rgb(230, 230, 230);
+}
+
+calendar section .day:hover {
+    cursor: pointer;
+    background-color: rgb(245, 245, 245);
+}
+
+calendar section .day .date {
+    width: 98%;
+    margin-top: 0.3em;
+    margin-right: 2%;
+    text-align: right;
+}
+
+calendar section .day .date .today {
+    background-color: rgb(255, 60, 60);
+    padding: 0.2em;
+    border-radius: 50%;
+}
+
+calendar section .day .events {
+    width: 90%;
+    margin: 0.3em auto;
+    padding: 0.2em;
+    background-color: rgb(255, 140, 140);
+    border-radius: 7px;
+    font-weight: bold;
+    color: black;
+}
+
+@media (min-width: 700px) {
+    calendar section .day {
+        width: 14.28%;
+        height: 7em;
+    }
+
+    calendar section .day.weekend {
+        width: 14.28%;
+        height: 7em;
+    }
+
+    calendar header .day-name {
+        display: inline-block;
+    }
+
+    calendar section .day.not-this-month {
+        display: inline-block;
+    }
+
+    calendar header {
+        padding: 0;
+    }
+
+    calendar section .weekday {
+        display: none;
+    }
+}selected-day header.selected-day {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    border-bottom: solid 2px gray;
+    z-index: 9999;
+}
+
+header.selected-day .title {
+    float: left;
+}
+
+selected-day header .month {
+    margin: 0.1em 0.5em;
+    font-size: 2em;
+    color: #49444e;
+}
+
+selected-day  header .year {
+    font-size: 1.8em;
+    color: #8b8493;
+}
+
+selected-day header .day {
+    margin: 0.3em 0.6em 0.5em;
+    font-size: 1.6em;
+    color: #8b8493;
+}
+
+selected-day header .menu {
+    float: left;
+    margin: 1em;
+    clear: both;
+}
+
+@media (min-width: 640px) {
+    selected-day header .menu {
+        float: right;
+        margin: 1em 2em;
+        clear: none;
+    }
+
+    header.selected-day .title {
+        clear: both;
+    }
+}
+
+
+
+selected-day header .menu .back,
+selected-day header .menu .add-event {
+    display: inline-block;
+    padding: 0.5em 1em;
+    border: solid 2px black;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+selected-day header .menu .add-event {
+    margin-top: 0.2em;
+}
+
+selected-day header .menu div:hover {
+    background-color: black;
+    color: white;
+}
+
+selected-day section {
+    width: 100%;
+    margin: 12em auto 1em;
+}
+
+selected-day section .times {
+    position: relative;
+    border-bottom: solid 1px #8b8493;
+    width: 96%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+selected-day section .times .hour,
+selected-day section .times .events {
+    display: inline-block;
+    min-height: 4em;
+    padding: 0.5em 0;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+selected-day section .times .hour {
+    float: left;
+    width: 15%;
+    text-align: right;
+}
+
+selected-day section .times .events {
+    float: right;
+    width: 84%;
+    border-left: solid 1px #8b8493;
+    background-color: rgb(247, 247, 247);
+    box-sizing: border-box;
+}
+
+
+selected-day section .times .events.activeTime {
+    background-color: #fdfab6;
+}
+
+section .times .events .event {
+    position: relative;
+    display: inline-block;
+    margin: 0 0 1em 1em ;
+    width: 40%;
+    vertical-align: top;
+}
+
+section .times .events .event .event-data:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+section .times .events .event .event-title {
+    font-weight: bold;
+    margin: 0.2em auto;
+}
+
+section .times .events .event .event-remove {
+    position: absolute;
+    top: 0;
+    right: -5px;
+    cursor: pointer;
+}
+
+section .times .events .event .event-remove:hover {
+    font-weight: bold;
+}
+
+@media (min-width: 640px) {
+    selected-day section {
+        width: 100%;
+        margin: 6em auto 1em;
+    }
+
+    selected-day section .times .hour {
+        width: 7%;
+    }
+
+    selected-day section .times .events {
+        width: 92%;
+    }
+
+    section .times .events .event {
+        width: auto;
+        max-width: 25%;
+        min-width: 10%;
+    }
+}@media (max-width: 730px) {
+    modal-window .modal-background div.window {
+        width: 80%;
+        left: 30%;
+    }
+}
+
+modal-window .modal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Hangyaboly, sans-serif;
+    color: rgb(120, 120, 120);
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 9999;
+    transition: 0.4s;
+}
+
+modal-window .modal-background .window {
+    position: absolute;
+    top: 2.5em;
+    left: 50%;
+    width: 35%;
+    margin-left: -18%;
+    border-radius: 7px;
+    background-color: white;
+    transition: 1s;
+}
+
+modal-window .modal-background.ng-leave.ng-leave-active,
+modal-window .modal-background.ng-enter {
+    top: -20em;
+    opacity: 0;
+}
+
+modal-window .modal-background.ng-enter.ng-enter-active,
+modal-window .modal-background.ng-leave {
+    top: 0;
+    opacity: 1;
+}
+
+modal-window .modal-background .window .title,
+modal-window .modal-background .window .message {
+    width: 100%;
+    height: 30%;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+modal-window .modal-background .window .title {
+    font-size: 1.4em;
+    font-weight: bold;
+    border-bottom: solid rgb(229, 229, 229) 1px;
+}
+
+modal-window .modal-background .window .message {
+    font-size: 1.2em;
+    padding-left: 1.2em;
+    border-bottom: solid rgb(229, 229, 229) 1px;
+}
+
+modal-window .modal-background .window .buttons {
+    width: 100%;
+    height: 30%;
+    padding: 1.2em 0;
+}
+
+modal-window .modal-background .window .close {
+    position: absolute;
+    top: 0.2em;
+    right: 1em;
+    font: 1.5em Xiomara, sans-serif;
+    color: rgb(204, 204, 204);
+    cursor: pointer;
+}
+
+modal-window .modal-background .window .close:hover {
+    color: rgb(37, 40, 48);
+}
+
+modal-window .modal-background .window .alert,
+modal-window .modal-background .window .ok,
+modal-window .modal-background .window .reject {
+    float: right;
+    margin-right: 1.4em;
+    padding: 0.5em 0.7em;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+modal-window .modal-background .window .ok {
+    background-color: rgba(27, 201, 142, 0.85);
+    border: solid rgb(27, 201, 142) 1px;
+}
+
+modal-window .modal-background .window .reject{
+    background-color: rgba(230, 71, 89, 0.85);
+    border: solid rgb(230, 71, 89) 1px;
+}
+
+modal-window .modal-background .window .alert {
+    background-color: rgb(28, 168, 221);
+    border: solid rgb(25, 151, 198) 1px;
+}
+
+modal-window .modal-background .window .ok:hover {
+    background: rgb(27, 201, 142);
+}
+
+modal-window .modal-background .window .reject:hover {
+    background: rgb(230, 71, 89);
+}
+
+modal-window .modal-background .window .alert:hover {
+    background-color: rgb(22, 134, 176);
+}
+
+modal-window .group:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+modal-window .modal-background .window .add-form {
+    width: 100%;
+    height: 30%;
+    padding: 1em;
+    box-sizing: border-box;
+    font-size: 1.2em;
+    border-bottom: solid rgb(229, 229, 229) 1px;
+}
+
+modal-window .modal-background .window .add-form td {
+    padding: 0.5em;
+}
+
+modal-window .modal-background .window .add-form .warning {
+    font-size:0.8em;
+    color: red;
+}
+
+modal-window .modal-background .window .add-form .add-form-time input {
+    width: 1.2em;
+}
+
+modal-window .modal-background .window .add-form .add-form-title input,
+modal-window .modal-background .window .add-form .add-form-content input {
+    width: 100%;
+}
