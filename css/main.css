@@ -1,7 +1,13 @@
+@font-face {
+    font-family: "Hangyaboly";
+    src: url(fonts/hangyaboly.ttf)   format("truetype");
+}
+
 html, body {
     width: 100%;
-
     position: relative;
+    font-family: Hangyaboly, sans-serif;
+    font-size: 1em;
 }
 
 .group:after {

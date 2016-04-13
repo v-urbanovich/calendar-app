@@ -13,7 +13,7 @@
 </header>
 
 <section>
-    <div class="times" ng-repeat="time in $ctrl.times">
+    <div class="times group" ng-repeat="time in $ctrl.times">
         <div class="hour">{{ time.hours }}</div>
         <div class="events" ng-class="{'activeTime': time.events.length}">
             <div ng-repeat="event in time.events" class="event">

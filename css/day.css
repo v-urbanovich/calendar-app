@@ -1,8 +1,13 @@
 
 
 selected-day header.selected-day {
+    position: fixed;
     width: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
     border-bottom: solid 2px gray;
+    z-index: 9999;
 }
 
 header.selected-day .title {
@@ -28,7 +33,7 @@ selected-day header .day {
 
 selected-day header .menu {
     float: right;
-    margin: 2em 2em 0;
+    margin: 1em 2em;
 }
 
 selected-day header .menu .back,
@@ -36,15 +41,26 @@ selected-day header .menu .add-event {
     display: inline-block;
     padding: 0.5em 1em;
     border: solid 2px black;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+selected-day header .menu div:hover {
+    background-color: black;
+    color: white;
 }
 
 selected-day section {
-    width: 95%;
-    margin: 1em auto;
+    width: 100%;
+    margin: 6em auto 1em;
 }
 
 selected-day section .times {
-    border-bottom: solid 1px black;
+    position: relative;
+    border-bottom: solid 1px #8b8493;
+    width: 96%;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 selected-day section .times .hour,
@@ -57,13 +73,17 @@ selected-day section .times .events {
 }
 
 selected-day section .times .hour {
-    width: 9%;
+    float: left;
+    width: 7%;
     text-align: right;
 }
 
 selected-day section .times .events {
-    width: 90%;
-    border-left: solid 1px black;
+    float: right;
+    width: 92%;
+    border-left: solid 1px #8b8493;
+    background-color: rgb(247, 247, 247);
+    box-sizing: border-box;
 }
 
 selected-day section .times .events.activeTime {
@@ -72,10 +92,10 @@ selected-day section .times .events.activeTime {
 
 section .times .events .event {
     position: relative;
-    margin: 0 0 1em 1em ;
     display: inline-block;
+    margin: 0 0 1em 1em ;
     max-width: 25%;
-    min-width: 7%;
+    min-width: 10%;
     vertical-align: top;
 }
 
@@ -92,7 +112,7 @@ section .times .events .event .event-title {
 section .times .events .event .event-remove {
     position: absolute;
     top: 0;
-    right: 5px;
+    right: -5px;
     cursor: pointer;
 }
 
