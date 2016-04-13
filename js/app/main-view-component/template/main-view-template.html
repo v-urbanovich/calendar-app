@@ -1,6 +1,8 @@
-<month data="$ctrl.data.daysData" select="$ctrl.selectDay(index)" ng-if="!$ctrl.data.selectedDay"></month>
+<calendar data="$ctrl.data.daysData" select="$ctrl.selectDay(index)" ng-if="!$ctrl.data.selectedDay"></calendar>
 <selected-day data="$ctrl.data.selectedDay"
               ng-if="$ctrl.data.selectedDay"
-              unselect="$ctrl.unselectDay()"></selected-day>
+              unselect="$ctrl.unselectDay()"
+              add="$ctrl.addEvent(event, day)"
+              remove="$ctrl.removeEvent(event, day)"></selected-day>
 
 <modal-window></modal-window>

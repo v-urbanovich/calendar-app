@@ -69,12 +69,31 @@ selected-day section .times .events.activeTime {
 }
 
 section .times .events .event {
+    position: relative;
     margin: 0 0 1em 1em ;
     display: inline-block;
-    width: 25%;
+    max-width: 25%;
+    min-width: 7%;
+    vertical-align: top;
+}
+
+section .times .events .event .event-data:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 section .times .events .event .event-title {
     font-weight: bold;
     margin: 0.2em auto;
+}
+
+section .times .events .event .event-remove {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    cursor: pointer;
+}
+
+section .times .events .event .event-remove:hover {
+    font-weight: bold;
 }

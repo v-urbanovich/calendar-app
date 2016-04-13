@@ -1,9 +1,7 @@
 <div class="modal-background" ng-if="$ctrl.checkOpen()">
     <div class="window an" ng-if="$ctrl.checkOpen()">
         <div class="title">{{ $ctrl.modalViewData.data.title }}</div>
-
         <div class="message" ng-if="!$ctrl.checkType('add-event')">{{ $ctrl.modalViewData.data.message }}</div>
-
         <div class="add-form" ng-if="$ctrl.checkType('add-event')">
             <table>
                 <tr class="add-form-time">
@@ -25,7 +23,6 @@
             </table>
         </div>
 
-
         <div class="buttons group">
 
             <div class="confirm" ng-if="$ctrl.checkType('confirm')">
@@ -40,7 +37,6 @@
                 <div class="ok" ng-click="$ctrl.close(true, $ctrl.data)">Сохранить</div>
             </div>
         </div>
-
         <div class="close" ng-click="$ctrl.close()">x</div>
     </div>
 </div>

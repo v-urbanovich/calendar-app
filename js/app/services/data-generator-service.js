@@ -17,7 +17,8 @@ module.exports = function() {
                 year: new Date(firstDay - 1).getFullYear(),
                 today: false,
                 month: new Date(firstDay - 1).getMonth(),
-                events: []
+                events: [],
+                customEvents: []
             };
 
             dataArray.unshift(dayData);
@@ -36,6 +37,20 @@ module.exports = function() {
                     year: day.getFullYear(),
                     events: []
                 };
+            if (i === 15) {
+                dayData.events.push({
+                    time: '10:20',
+                    title: 'My new event',
+                    content: 'Hello? ddsdasdkl;k;las asdk;w dsdasdkl;k;las  dsdasdkl;k;las  dsdasdkl;k;las ',
+                    custom: false
+                });
+                dayData.events.push({
+                    time: '10:20',
+                    title: 'My new event',
+                    content: 'Hello? ddsdasdkl;k;las asdk;w dsdasdkl;k;las  dsdasdkl;k;las  dsdasdkl;k;las ',
+                    custom: false
+                })
+            }
 
             dataArray.push(dayData);
         }
@@ -51,7 +66,8 @@ module.exports = function() {
                     today: false,
                     month: day.getMonth(),
                     year: day.getFullYear(),
-                    events: []
+                    events: [],
+                    customEvents: []
                 };
 
             dataArray.push(dayData);

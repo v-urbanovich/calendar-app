@@ -2,12 +2,13 @@
     <div class="title">
         <span class="month">{{ $ctrl.data.month | monthFilter }} {{ $ctrl.data.date }},</span>
         <span class="year">{{ $ctrl.data.year }}</span>
+
         <div class="day">{{ $ctrl.data.day | dayFilter}}</div>
     </div>
 
     <div class="menu">
         <div class="back" ng-click="$ctrl.unselect()">Назад</div>
-        <div class="add-event">Добавить событие</div>
+        <div class="add-event" ng-click="$ctrl.addEvent()">Добавить событие</div>
     </div>
 </header>
 
@@ -16,9 +17,12 @@
         <div class="hour">{{ time.hours }}</div>
         <div class="events" ng-class="{'activeTime': time.events.length}">
             <div ng-repeat="event in time.events" class="event">
-                <div class="event-time">{{ event.time }}</div>
-                <div class="event-title">{{ event.title }}</div>
-                <div class="event-content">{{ event.content }}</div>
+                <div class="event-data">
+                    <div class="event-time">{{ event.time }}</div>
+                    <div class="event-title">{{ event.title }}</div>
+                    <div class="event-content">{{ event.content }}</div>
+                </div>
+                <div class="event-remove" ng-click="$ctrl.removeEvent($index, time, $ctrl.data)">X</div>
             </div>
         </div>
     </div>

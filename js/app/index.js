@@ -6,8 +6,8 @@ calendar
     .factory('dataGenerator', require('./services/data-generator-service'))
     .factory('createTimeGrid', require('./services/time-grid-service'))
     .factory('modal', require('./services/modal-service'))
-    .factory('validationService', require('./services/validation-service'));
-
+    .factory('validationService', require('./services/validation-service'))
+    .factory('formDataService', require('./services/add-form-data-service'));
 
 calendar
     .component('mainView', require('./main-view-component/main-view'))
