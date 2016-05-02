@@ -3,11 +3,21 @@
 <head lang="en">
     <meta charset="UTF-8">
     
-   <meta property="og:title" content="My Own Calendar">
-    <meta property="og:url" content="http://v-urbanovich.github.io/calendar-app/">
-    <meta property="og:image" content="http://img.wikinut.com/img/gycf69_-6rv_5fol/jpeg/724x5000/Best-Friends-Img-Src%3AImage%3A-FreeDigitalPhotos.net.jpeg">
-    <meta property="og:site_name" content="Calendar">
-    <meta property="og:description" content="This is big content, This is big content, This is big content, This is big content, This is big content">
+  <!-- Twitter -->
+	<meta name="twitter:card" content="summary"/>
+	<meta name="twitter:site" content="Calendar App"/>
+	<meta name="twitter:title" content="Calendar App">
+	<meta name="twitter:description" content="Learn more about Data Science with the new Data Dilemmas app(test)"/>
+	<meta name="twitter:image:src" content="http://images.fineartamerica.com/images-medium-large/loose-goose-iv-hot-air-balloon-rally-img-6492-torrey-smith.jpg"/>
+	<meta name="twitter:domain" content="http://v-urbanovich.github.io/calendar-app/"/>
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="website"/>
+	<meta property="og:title" content="Calendar App"/>
+	<meta property="og:description" content="Learn more about Data Science with the new Data Dilemmas app"/>
+	<meta property="og:image" content="http://images.fineartamerica.com/images-medium-large/loose-goose-iv-hot-air-balloon-rally-img-6492-torrey-smith.jpg"/>
+	<meta property="og:url" content="http://v-urbanovich.github.io/calendar-app/"/>
+	<meta property="og:site_name" content="Calendar App"/>
 
     <title>Calendar</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
@@ -16,6 +26,31 @@
     <script src="https://code.angularjs.org/1.4.2/angular-animate.js"></script>
 </head>
 <body>
+    
+     <li class="list__el">
+                <div class="social">
+                    <ul class="social__list">
+                        <li class="social__el">
+                            <a href="" onclick="javascript:window.open(this.href,
+  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="social__link">
+                               G+
+                            </a>
+                        </li>
+                        <li class="social__el">
+                            <a href onclick="javascript:window.open(this.href,
+  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="social__link">
+                                facebook
+                            </a>
+                        </li>
+                        <li class="social__el">
+                            <a href onclick="javascript:window.open(this.href,
+  '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="social__link">
+                               twitter
+                            </a>
+                        </li>
+                    </ul>
+                </div><!-- end social -->
+            </li>
     <main-view></main-view>
 
 <script src="bundle.js"></script>
