@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<html ng-app="calendar" itemscope itemtype="http://schema.org/Other">
+<html ng-app="calendar">
 <head lang="en">
     <meta charset="UTF-8">
 <!-- Добавьте указанные ниже теги в заголовок страницы. -->
-<meta itemprop="name" content="Calendar G+">
-<meta itemprop="description" content="Description (google+)">
-<meta itemprop="image" content="http://img.wikinut.com/img/gycf69_-6rv_5fol/jpeg/724x5000/Best-Friends-Img-Src%3AImage%3A-FreeDigitalPhotos.net.jpeg">
-    
+
   <!-- Twitter -->
 	<meta name="twitter:card" content="summary"/>
 	<meta name="twitter:site" content="twitter"/>
@@ -31,7 +28,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.js"></script>
     <script src="https://code.angularjs.org/1.4.2/angular-animate.js"></script>
 </head>
-<body>
+<body itemscope itemtype="http://schema.org/Product">
+	
+	<h1 itemprop="name">Shiny Trinket</h1>
+  <img itemprop="image" src="http://images.fineartamerica.com/images-medium-large/loose-goose-iv-hot-air-balloon-rally-img-6492-torrey-smith.jpg"" />
+  <p itemprop="description">Shiny trinkets are shiny.</p>
 	
 	<a title='Share on Facebook' 
 href='http://www.facebook.com/sharer.php?s=100&p[title]=TITLE_HERE&p[summary]=TEXT_HERE&p[url]=http://v-urbanovich.github.io/calendar-app/&p[images][0]=http://images.fineartamerica.com/images-medium-large/loose-goose-iv-hot-air-balloon-rally-img-6492-torrey-smith.jpg' target='_blank' >
