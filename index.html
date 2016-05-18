@@ -1,3 +1,6 @@
+<?php
+   require("social.php");
+?>
 <!DOCTYPE html>
 <html ng-app="calendar" itemscope itemtype="http://schema.org/Other">
 <head lang="en">
@@ -65,9 +68,9 @@
                             </a>
                         </li>
                         <li class="social__el">
-                            <a onclick="Share.facebook('URL','TITLE','IMG_PATH','DESC')">
-                                facebook
-                            </a>
+                            <a onClick="window.open('http://www.facebook.com/sharer.php?s=100&amp;p[title]=<?php echo $title;?>&amp;p[summary]=<?php echo $summary;?>&amp;p[url]=<?php echo $url; ?>&amp;p[images][0]=<?php echo $image;?>','sharer','toolbar=0,status=0,width=700,height=400');" href="javascript: void(0)">
+    <img src="http://www.masterskayafanstranic.com.ua/wp-content/uploads/2012/05/button4.png" />
+</a>
                         </li>
                         <li class="social__el">
                             <a onclick="Share.twitter('URL','TITLE')">
